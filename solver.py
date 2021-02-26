@@ -1,7 +1,6 @@
 from collections import Counter
 from models import Street, Intersection, Car
 
-
 def solve(data, filename):
 
     duration, intersections_number, streets_number, cars_number, score = data.pop(
@@ -25,13 +24,7 @@ def solve(data, filename):
     for i in range(0, int(cars_number)):
         paths.append(Car(data.pop(0)))
 
-    file = open(f"./results/{filename}_output.txt", 'w')
+    return intersections
+      
 
-    file.write(str(len(intersections.keys())) + "\n")
-    for k, v in intersections.items():
-        file.write(v.id + "\n")
-        file.write(str(len(v.incoming_streets)) + "\n")
-        for street in v.incoming_streets:
-            file.write(street + " 1" + "\n")
 
-    file.close()
