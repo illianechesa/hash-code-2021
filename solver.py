@@ -1,5 +1,5 @@
 from collections import Counter
-from models import Street, Intersection, Car
+from models import Intersection
 
 
 def solve(data, filename):
